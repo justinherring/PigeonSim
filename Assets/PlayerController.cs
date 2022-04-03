@@ -124,6 +124,6 @@ public class PlayerController : MonoBehaviour
 
     public void Defeated()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(2);
     }
 }
