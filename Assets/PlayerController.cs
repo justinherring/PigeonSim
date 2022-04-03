@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
 
     bool canMove = true;
 
+    float rotation = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,12 +54,34 @@ public class PlayerController : MonoBehaviour
             // Set direction of sprite to movement direction
             if (movementInput.x < 0)
             {
-                spriteRenderer.flipX = true;
+                if (rotation != 90)
+                {
+                    rotation = 90;
+                }
             }
             else if (movementInput.x > 0)
             {
-                spriteRenderer.flipX = false;
+                if (rotation != -90)
+                {
+                    rotation = -90;
+                }
             }
+
+            if (movementInput.y < 0)
+            {
+                if (rotation != 180)
+                {
+                    rotation = 180;
+                }
+            }
+            else if (movementInput.y > 0)
+            {
+                if (rotation != 0)
+                {
+                    rotation = 0;
+                }
+            }
+            transform.localRotation = Quaternion.Euler(0, 0, rotation);
         }
     }
 
