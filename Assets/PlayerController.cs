@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     // called so many times a second; used for physics stuff
@@ -119,7 +119,11 @@ public class PlayerController : MonoBehaviour
 
     void OnLeave()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene(0);
     }
 
+    public void Defeated()
+    {
+        SceneManager.LoadScene(0);
+    }
 }
